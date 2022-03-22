@@ -1,0 +1,38 @@
+
+image:
+  # -- image repository
+  repository: hub.docker.com/boi12321/porn-vault
+  # -- image tag
+  tag: release-0.27.0@sha256:f8f00353cc3ef8fb79cae83011a7e87894fbd4fea16aa4421f7fc1cc944fad00
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+securityContext:
+  runAsNonRoot: false
+
+podSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+
+# -- environment variables. See more environment variables in the [stashapp documentation](https://raw.githubusercontent.com/stashapp/stash/master/docker/production/docker-compose.yml)
+# @default -- See below
+env:
+  # -- Set the container user
+  PUID: 1000
+  PGID: 1000
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      main:
+        port: 9999
+        targetPort: 9999
+
+# -- Configure persistence settings for the chart under this key.
+# @default -- See values.yaml
+persistence:
+  config:
+    enabled: true
+    mountPath: "/root/.stash"

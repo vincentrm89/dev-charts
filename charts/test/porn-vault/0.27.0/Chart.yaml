@@ -1,0 +1,31 @@
+apiVersion: v2
+kubeVersion: ">=1.16.0-0"
+name: porn-vault
+appVersion: "0.27.0"
+version: "0.27.0"
+description: Manage your ever-growing porn collection
+sources:
+  - https://porn-vault.github.io/porn-vault/
+  - https://gitlab.com/porn-vault/porn-vault
+  - https://hub.docker.com/r/boi12321/porn-vault
+home: https://github.com/vincentrm89/dev-charts
+icon: https://gitlab.com/porn-vault/porn-vault/-/blob/7a6c1ef4e9fbf9cf9a5f178a6763b8c81261e669/assets/favicon.png
+annotations:
+  truecharts.org/catagories: |
+    - media
+  truecharts.org/SCALE-support: "true"
+  truecharts.org/grade: U
+dependencies:
+  - name: common
+    repository: https://truecharts.org/
+    version: 3.5.5
+  # - name: elasticsearch
+  #   repository: https://github.com/vincentrm89/dev-charts
+  #   version: 8.1.0
+keywords:
+  - porn-vault
+  - porn
+maintainers:
+  - email: info@truecharts.org
+    name: TrueCharts
+    url: https://truecharts.org
